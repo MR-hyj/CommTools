@@ -37,10 +37,7 @@ class Timer:
         return f"{int(days)}d:{int(hours):02}h:{int(minutes):02}m:{int(seconds):02}s"
 
     def clock_summary(self, cnt_remaining: int, logger: logging.Logger=None):
-        if logger is None:
-            log_func: callable = print
-        else:
-            log_func: callable = logger.info
+        log_func: callable = print if logger is None else logger.info
         average_time_per_file = self.__total_time_elapsed / self.__cnt_processed_files
         estimated_remaining_time = average_time_per_file * cnt_remaining
 

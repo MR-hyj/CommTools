@@ -48,10 +48,7 @@ class Trigger:
         return self.__cnt_corrupted
 
     def summary(self, logger: logging.Logger=None):
-        if logger is None:
-            log_func: callable = print
-        else:
-            log_func: callable = logger.info
+        log_func: callable = print if logger is None else logger.info
         log_func(f'trigger from {self.__from_file}')
         if self.__cnt_fail > 0:
             log_func(f"failed items: {self.__failed_list}")
