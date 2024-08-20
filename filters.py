@@ -254,8 +254,6 @@ class PathPatternFileFilter(ImageBaseFileFilter):
         **kwargs: Dict[Any, Any],
     ) -> None:
         """根据文件的路径中是否含有特定的pattern来匹配
-        #; 比如pattern可以取 {直线杆, 耐张杆, 变压器, ...} 来过滤一些场景
-        #; 或者pattern可以取线路名来过滤特定的线路
 
         Args:
             path_patterns (list[str]): 只要符合这个list中的一个即可
