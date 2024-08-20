@@ -118,31 +118,18 @@ class FilterComposeAnd(BaseFilterCompose):
 
 if __name__ == "__main__":
 
-    pred_dir = "D:\\project\\labels\\PreLabel\\patches_othersize\\patch_SanYuePeiDian\\xml_orig_v4.1.0"
+    pred_dir = "path/to/yolo_predict_labels/"
     files = os.listdir(pred_dir)
     name2idx_dict = {
-        "JYZ_ZC": 0,
-        "GLKG": 1,
-        "ZSKG": 2,
-        "TM": 3,
-        "BYQ": 4,
-        "DLSRDQ": 5,
-        "GANTA": 6,
-        "GANTOU": 7,
-        "TATOU": 8,
-        "NX": 9,
-        "JYZ_XS": 10,
-        "GHP": 11,
-        "SMCG": 12,
-        "BLQ": 13,
-        "DAOXIAN": 14,
+        "A": 0, 
+        "B": 1, 
     }
     from .filters import LabelLossFileFilter
 
     for file in files:
         pred_xml_file = os.path.join(pred_dir, file)
         gt_xml_file = os.path.join(
-            "D:\\project\\labels\\PreLabel\\patches_othersize\\patch_SanYuePeiDian\\xml_orig_renamed_v4.1.0",
+            "path/to/gt_labels/",
             file,
         )
 
